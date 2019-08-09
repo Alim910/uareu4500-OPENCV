@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/buttonScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="7dp"
+        android:onClick="startScan"
+        android:text="Scan finger"
+        app:layout_constraintEnd_toStartOf="@+id/buttonScan2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonScan2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="3dp"
+        android:onClick="saveTemplate"
+        android:text="GUARDAR EN BD"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCheck"
+        app:layout_constraintStart_toEndOf="@+id/buttonScan"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonCheck"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="checkFing"
+        android:text="CHECK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonScan2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivFingerDisplay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/buttonScan"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="48dp"
+        android:contentDescription="Scanned fingerprint"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/ivFingerDisplay3"
+        app:layout_constraintEnd_toStartOf="@+id/ivFingerDisplay4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonScan"
+        tools:ignore="MissingConstraints" />
+    <!---   android:src="@drawable/fp6"   -->
+
+    <ImageView
+        android:id="@+id/ivFingerDisplay2"
+        android:layout_width="0dp"
+        android:layout_height="161dp"
+        android:layout_below="@+id/buttonScan"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="13dp"
+        android:contentDescription="Scanned fingerprint"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/ivFingerDisplay4"
+        app:layout_constraintStart_toEndOf="@+id/ivFingerDisplay"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/ivFingerDisplay3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@+id/buttonScan"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="66dp"
+        android:contentDescription="Scanned fingerprint"
+        android:onClick="showFinger"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/LOG"
+        app:layout_constraintEnd_toStartOf="@+id/ivFingerDisplay4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivFingerDisplay4"
+        tools:ignore="MissingConstraints" />
+    <!---  android:src="@drawable/fp6" -->
+
+    <ImageView
+        android:id="@+id/ivFingerDisplay4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="62dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LOG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivFingerDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/ivFingerDisplay2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/LOG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:autoText="false"
+        android:verticalScrollbarPosition="right"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/fng1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="26dp"
+        android:ems="10"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/kp1"
+        app:layout_constraintEnd_toStartOf="@+id/kp1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/kp1"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/kp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="65dp"
+        android:ems="10"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/dscp1"
+        app:layout_constraintEnd_toEndOf="@+id/dscp1"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/dscp1"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/dscp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="@+id/ivFingerDisplay3"
+        app:layout_constraintTop_toBottomOf="@+id/ivFingerDisplay3"
+        tools:ignore="MissingConstraints" />
+
+</android.support.constraint.ConstraintLayout>
